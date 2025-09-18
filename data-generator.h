@@ -1,6 +1,10 @@
 //
 // Created by clau on 25-9-18.
 //
+<<<<<<< HEAD
+=======
+
+>>>>>>> cf2aa0f0b6e7563229b46ef3c15f12736fbd64b2
 #ifndef DATA_GENERATOR_H
 #define DATA_GENERATOR_H
 #include <string>
@@ -167,6 +171,7 @@ std::string gen<T>::getStringMixed(int n) {
     }
     return s;
 }
+<<<<<<< HEAD
 template<typename T>
 std::vector<int> gen<T>::getArrayRange(int n,int l,int r) {
     std::vector<int> a(n);
@@ -206,3 +211,5 @@ void gen<T>::inputArray64Withoutn(std::vector<long long> a) {
         in<<a.back()<<std::endl;
     }
 }
+=======
+>>>>>>> cf2aa0f0b6e7563229b46ef3c15f12736fbd64b2
