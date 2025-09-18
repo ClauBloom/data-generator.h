@@ -1,9 +1,6 @@
 //
 // Created by clau on 25-9-18.
 //
-//
-// Created by clau on 25-9-17.
-//
 
 #ifndef DATA_GENERATOR_H
 #define DATA_GENERATOR_H
