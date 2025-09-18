@@ -49,6 +49,7 @@ public:
     void inputString(std::string);
     void inputInt(int n);
     void inputArrayWithoutn(std::vector<int> a);
+    void inputArray64Withoutn(std::vector<long long> a);
     void inputEndl();
     //生成答案
     void solve();
@@ -59,6 +60,7 @@ public:
     std::vector<std::vector<int>> getArray_2d(int n,int m);
     std::vector<std::vector<long long>> getArray64_2d(int n,int m);
     std::vector<int> getArrayRange(int n,int l,int r);
+    std::vector<long long> getArrayRange64(int n,int l,int r);
     std::vector<int> getArrayRangePos(int n,int v);
     std::vector<int> getRangeArray(int v);
     //字符串类信息
@@ -109,25 +111,25 @@ void gen<T>::inputEndl() {
 template<typename T>
 int gen<T>::getInt() {
     int x = rnd.next(INT_MIN,INT_MAX);
-    inputs<<x;
+    inputs<<x<<' ';
     return x;
 }
 template<typename T>
 int gen<T>::getIntPos() {
     int x = rnd.next(1,INT_MAX);
-    inputs<<x;
+    inputs<<x<<' ';
     return x;
 }
 template<typename T>
 int gen<T>::getIntRange(int l,int r) {
     int x = rnd.next(l,r);
-    inputs<<x;
+    inputs<<x<<' ';
     return x;
 }
 template<typename T>
 int gen<T>::getIntRangePos(int v) {
     int x = rnd.next(1,v);
-    inputs<<x;
+    inputs<<x<<' ';
     return x;
 }
 template<typename T>
@@ -136,7 +138,7 @@ std::string gen<T>::getStringLowerAlpha(int n) {
     for(int i = 0;i<n;i++) {
         res[i] = 'a' + rnd.next(0,25);
     }
-    inputs<<res;
+    inputs<<res<<std::endl;;
     return res;
 }
 template<typename T>
@@ -168,4 +170,43 @@ std::string gen<T>::getStringMixed(int n) {
         s[i] = alpha;
     }
     return s;
+}
+template<typename T>
+std::vector<int> gen<T>::getArrayRange(int n,int l,int r) {
+    std::vector<int> a(n);
+    for(int i = 0;i<n;i++) {
+        int x = rnd.next(l,r);
+        inputs<<x<<' ';
+        a[i] = x;
+    }
+    return a;
+}
+template<typename T>
+std::vector<long long> gen<T>::getArrayRange64(int n,int l,int r) {
+    std::vector<long long> a(n);
+    for(int i = 0;i<n;i++) {
+        int x = rnd.next(l,r);
+        inputs<<x<<' ';
+        a[i] = x;
+    }
+    return a;
+}
+template<typename T>
+void gen<T>::inputArray(std::vector<int> a) {
+    in<<a.size()<<std::endl;
+    for(int i = 0;i<a.size() - 1;i++) {
+        in<<a[i]<<' ';
+    }
+    if(a.size() > 0) {
+        in<<a.back()<<std::endl;
+    }
+}
+template<typename T>
+void gen<T>::inputArray64Withoutn(std::vector<long long> a) {
+    for(int i = 0;i<a.size() - 1;i++) {
+        in<<a[i]<<' ';
+    }
+    if(a.size() > 0) {
+        in<<a.back()<<std::endl;
+    }
 }
