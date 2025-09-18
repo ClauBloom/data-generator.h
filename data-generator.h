@@ -1,10 +1,10 @@
 //
 // Created by clau on 25-9-18.
 //
-<<<<<<< HEAD
-=======
+//
+// Created by clau on 25-9-17.
+//
 
->>>>>>> cf2aa0f0b6e7563229b46ef3c15f12736fbd64b2
 #ifndef DATA_GENERATOR_H
 #define DATA_GENERATOR_H
 #include <string>
@@ -17,11 +17,11 @@
 #include <functional>
 #include "testlib.h"
 /*
-使用流程
-1. 使用数据生成器，并暂存至stringstream
-2. 使用solver获取答案，并暂存至stringstream
-3. 使用input前缀函数输出数据
-4. 使用output前缀函数输出数据
+ 使 *用流程
+ 1. 使用数据生成器，并暂存至stringstream
+ 2. 使用solver获取答案，并暂存至stringstream
+ 3. 使用input前缀函数输出数据
+ 4. 使用output前缀函数输出数据
  */
 template<typename T>
 class gen {
@@ -171,7 +171,6 @@ std::string gen<T>::getStringMixed(int n) {
     }
     return s;
 }
-<<<<<<< HEAD
 template<typename T>
 std::vector<int> gen<T>::getArrayRange(int n,int l,int r) {
     std::vector<int> a(n);
@@ -211,5 +210,3 @@ void gen<T>::inputArray64Withoutn(std::vector<long long> a) {
         in<<a.back()<<std::endl;
     }
 }
-=======
->>>>>>> cf2aa0f0b6e7563229b46ef3c15f12736fbd64b2
